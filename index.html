@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
     <p id="demo">Your grade is undefined</p>
-
+    
     <form id="gradeform">
-
         <label for="f1"> Grade in F1:</label><br>
         <input type="number" id="f1" name="f1" placeholder="Average Grade" oninput="onUpdateAverage()"></input>
         <input type="button" id="f1button" value="&darr;" onclick="onClickExpand('f1')"></input>
@@ -29,7 +29,7 @@
         </div>
         <br><br>
 
-        <label>Grade in Summative:</label><br>
+        <label for="s"> Grade in Summative:</label><br>
         <input type="number" id="s" name="s" placeholder="Average Grade" oninput="onUpdateAverage()"></input>
         <input type="button" id="sbutton" value="&darr;" onclick="onClickExpand('s')"></input>
         <div id="sdiv" hidden>
@@ -37,7 +37,7 @@
         </div>
         <br><br>
 
-        <label>Grade in Semestral:</label><br>
+        <label for="sm">Grade in Semestral:</label><br>
         <input type="number" id="sm" name="sm" placeholder="Average Grade" oninput="onUpdateAverage()"></input>
         <input type="button" id="smbutton" value="&darr;" onclick="onClickExpand('sm')"></input>
         <div id="smdiv" hidden>

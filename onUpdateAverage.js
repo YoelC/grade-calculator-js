@@ -14,6 +14,6 @@ function onUpdateAverage() {
         document.getElementById("demo").innerHTML = "Your grade is undefined";
         return;
     }
-    document.getElementById("demo").innerHTML = round(grade);
+    document.getElementById("demo").innerHTML = "Your grade is" + " " + (round(grade));
 
 }
