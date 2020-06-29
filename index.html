@@ -32,82 +32,11 @@
 
     </form>
 
-    <script>
-        var f1dropped = false;
+    <script src="onClickExpand.js"></script>
+    <script src="onUpdateAverage.js"></script>
+    <script src="onUpdateIndividual.js"></script>
+    <script src="round.js"></script>
 
-        function round(number) {
-            return (Math.round(number * 100) / 100).toFixed(2)
-        }
-
-        function onClickExpand() {
-            f1dropped = !f1dropped;
-
-            if (f1dropped) {
-                document.getElementById("f1button").value = "↑";
-                document.getElementById("f1div").hidden = false;
-
-            } else {
-                document.getElementById("f1button").value = "↓"
-                document.getElementById("f1div").hidden = true;
-            }
-
-        }
-
-        function onUpdateAverage() {
-            var f1 = document.getElementById("f1").value;
-            var f2 = document.getElementById("f2").value;
-            var s = document.getElementById("s").value;
-            var sm = document.getElementById("sm").value;
-
-            var f1Weight = document.getElementById("f1").value != "" ? 10.0 : 0;
-            var f2Weight = document.getElementById("f2").value != "" ? 25.0 : 0;
-            var sWeight = document.getElementById("s").value != "" ? 40.0 : 0;
-            var smWeight = document.getElementById("sm").value != "" ? 25.0 : 0;
-
-            var grade = (f1 * f1Weight + f2 * f2Weight + s * sWeight + sm * smWeight) / (f1Weight + f2Weight + sWeight + smWeight);
-            if (isNaN(grade)) {
-                document.getElementById("demo").innerHTML = "Your grade is undefined";
-                return;
-            }
-            document.getElementById("demo").innerHTML = round(grade);
-
-        }
-
-        var totalChildren = 1;
-        function onUpdateIndividual() {
-
-            for (i = 0; i < totalChildren; i++) {
-                if (document.getElementById("f1div").children[i].value == "" && totalChildren > 1) {
-                    document.getElementById("f1div").children[i].remove();
-                    i -= 1;
-                    totalChildren -= 1
-                    
-                }
-            }
-
-            if (document.getElementById("f1div").children[totalChildren - 1].value != "") {
-                    totalChildren += 1;
-
-                    var input = document.createElement("input");
-                    var br = document.createElement("br");
-                    input.type = "number";
-                    input.placeholder = "Individual Grade";
-                    input.oninput = onUpdateIndividual;
-                    document.getElementById("f1div").appendChild(input);
-                }
-            
-            var total = 0;
-            for (i = 0; i < totalChildren - 1; i++) {
-                total += parseFloat(document.getElementById("f1div").children[i].value);
-            }
-
-            total /= totalChildren - 1;
-
-            document.getElementById("f1").value = round(total);
-            onUpdateAverage();
-        }
-
-    </script>
 </body>
 
 </html>
