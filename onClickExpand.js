@@ -1,15 +1,20 @@
-var f1dropped = false;
+var dropped = {
+    f1: false,
+    f2: false,
+    s: false,
+    sm: false,
+}
 
-function onClickExpand() {
-    f1dropped = !f1dropped;
+function onClickExpand(grade) {
+    dropped[grade] = !dropped[grade];
 
-    if (f1dropped) {
-        document.getElementById("f1button").value = "↑";
-        document.getElementById("f1div").hidden = false;
+    if (dropped[grade]) {
+        document.getElementById(grade + "button").value = "↑";
+        document.getElementById(grade + "div").hidden = false;
 
     } else {
-        document.getElementById("f1button").value = "↓"
-        document.getElementById("f1div").hidden = true;
+        document.getElementById(grade + "button").value = "↓"
+        document.getElementById(grade + "div").hidden = true;
     }
 
 }

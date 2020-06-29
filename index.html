@@ -15,20 +15,36 @@
 
         <label for="f1"> Grade in F1:</label><br>
         <input type="number" id="f1" name="f1" placeholder="Average Grade" oninput="onUpdateAverage()"></input>
-        <input type="button" id="f1button" value="&darr;" onclick="onClickExpand()"></input>
+        <input type="button" id="f1button" value="&darr;" onclick="onClickExpand('f1')"></input>
         <div id="f1div" hidden>
-            <input type="number" placeholder="Individual Grade" oninput="onUpdateIndividual()">
+            <input type="number" placeholder="Individual Grade" oninput="onUpdateIndividual('f1')">
         </div>
         <br><br>
 
         <label for="f2"> Grade in F2:</label><br>
-        <input type="number" id="f2" name="f2" placeholder="Average Grade" oninput="onUpdateAverage()"></input><br><br>
+        <input type="number" id="f2" name="f2" placeholder="Average Grade" oninput="onUpdateAverage()"></input>
+        <input type="button" id="f2button" value="&darr;" onclick="onClickExpand('f2')"></input>
+        <div id="f2div" hidden>
+            <input type="number" placeholder="Individual Grade" oninput="onUpdateIndividual('f2')">
+        </div>
+        <br><br>
 
         <label>Grade in Summative:</label><br>
-        <input type="number" id="s" name="s" placeholder="Average Grade" oninput="onUpdateAverage()"></input><br><br>
+        <input type="number" id="s" name="s" placeholder="Average Grade" oninput="onUpdateAverage()"></input>
+        <input type="button" id="sbutton" value="&darr;" onclick="onClickExpand('s')"></input>
+        <div id="sdiv" hidden>
+            <input type="number" placeholder="Individual Grade" oninput="onUpdateIndividual('s')">
+        </div>
+        <br><br>
 
         <label>Grade in Semestral:</label><br>
-        <input type="number" id="sm" name="sm" placeholder="Average Grade" oninput="onUpdateAverage()"></input><br><br>
+        <input type="number" id="sm" name="sm" placeholder="Average Grade" oninput="onUpdateAverage()"></input>
+        <input type="button" id="smbutton" value="&darr;" onclick="onClickExpand('sm')"></input>
+        <div id="smdiv" hidden>
+            <input type="number" placeholder="Individual Grade" oninput="onUpdateIndividual('sm')">
+        </div>
+        <br><br>
+
 
     </form>
 
